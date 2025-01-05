@@ -132,6 +132,7 @@ main{
 .sc-comment-slide .swiper-wrapper {
   display: flex;
   align-items: stretch !important;
+  height: auto !important;
 }
 .sc-comment-slide .swiper-slide {
   display: grid;

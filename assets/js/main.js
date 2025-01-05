@@ -93,7 +93,7 @@ const commentSwiper = new Swiper('.sc-comment-slide .swiper', {
   }
 });
 window.addEventListener('resize', () => {
-  swiper.update();  // 강제로 업데이트
+  swiper.update();  // swiper 업데이트
 });
 
 
@@ -138,6 +138,7 @@ $('.sc-recommend .btn-slide.show').click(function () {
   recommend.play();
 
   $(".sc-recommend").addClass('active');
+  $(".sc-recommend .swiper").removeClass('slide');
   // $("html").addClass('fixed');
 
   if ($(".sc-recommend").hasClass('active')) {
