@@ -1,3 +1,26 @@
+/* Fonts */
+@font-face{
+  font-family:'FoundersGrotesk';
+  src:url('../fonts/foundersgrotesk-regular.woff') format(‘woff’),
+      url('../fonts/foundersgrotesk-regular.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+}
+@font-face{
+  font-family:'FoundersGrotesk';
+  src:url('../fonts/foundersgrotesk-medium.woff') format(‘woff’),
+      url('../fonts/foundersgrotesk-medium.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+}
+@font-face{
+  font-family:'FoundersGrotesk Condensed';
+  src:url('../fonts/foundersgroteskcondensed-semibold.woff') format(‘woff’),
+      url('../fonts/foundersgroteskcondensed-semibold.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+}
+
 /* reset(초기화) */
 :root {
     -webkit-font-smoothing: antialiased;
@@ -133,30 +156,9 @@ table {
   border-collapse: collapse;
 }
 
-/* Fonts */
-@font-face{
-   font-family:'FoundersGrotesk';
-   src:url('../fonts/foundersgrotesk-regular.woff') format(‘woff’),
-       url('../fonts/foundersgrotesk-regular.otf') format('opentype');
-       font-weight: 300;
-       font-style: normal;
-}
-@font-face{
-   font-family:'FoundersGrotesk';
-   src:url('../fonts/foundersgrotesk-medium.woff') format(‘woff’),
-       url('../fonts/foundersgrotesk-medium.otf') format('opentype');
-       font-weight: 400;
-       font-style: normal;
-}
-@font-face{
-   font-family:'FoundersGrotesk Condensed';
-   src:url('../fonts/foundersgroteskcondensed-semibold.woff') format(‘woff’),
-       url('../fonts/foundersgroteskcondensed-semibold.otf') format('opentype');
-       font-weight: normal;
-       font-style: normal;
-}
 
 
+/* 기초세팅 */
 html.fixed{
   overflow-y: hidden;
 }
@@ -167,5 +169,6 @@ body{
     font-weight: 400;
     line-height: 1;
     min-height: 100%;
+    min-width: 320px;
     background-color: #fff;
 }

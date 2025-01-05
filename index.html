@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -30,7 +30,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
 
     <!-- SWIPER CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- lottie CDN -->
@@ -39,6 +39,8 @@
     <!-- JS -->
     <script defer src="./assets/js/common.js"></script>
     <script defer src="./assets/js/main.js"></script>
+    <script defer src="./assets/js/canvas.js"></script>
+
 </head>
 
 <body>
@@ -117,7 +119,7 @@
             </div>
             <!-- // nav 버튼 -->
             <!-- 전체 메뉴 리스트 -->
-            <div class="nav-menu-area" aria-expanded="false">
+            <div class="nav-menu-area">
                 <div class="nav-menu-wrap">
                     <div class="nav-menu__bg" aria-hidden="true"></div>
                     <div class="nav-menu__list" role="menu">
@@ -178,7 +180,7 @@
                                             <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 32 32">
                                                 <path fill="currentColor"
-                                                    d="M27.2939,11.8066q0-.001-.001-.001l-7.876-7.1523c-1.957-1.7773-4.9092-1.7764-6.8682.0049l-7.8477,7.1494c-1.0811.9844-1.7012,2.3604-1.7012,3.7725v9.1289c0,1.8145,1.4922,3.291,3.3262,3.291h5.6738c.5527,0,1-.4473,1-1v-6.998c0-1.6543,1.3457-3,3-3s3,1.3457,3,3v6.998c0,.5527.4473,1,1,1h5.6738c1.834,0,3.3262-1.4766,3.3262-3.291v-9.125c0-1.4141-.6221-2.791-1.7061-3.7773ZM27,24.709c0,.6992-.6074,1.291-1.3262,1.291h-4.6738v-5.998c0-2.7568-2.2432-5-5-5s-5,2.2432-5,5v5.998h-4.6738c-.7188,0-1.3262-.5918-1.3262-1.291v-9.1289c0-.8506.3818-1.6875,1.0488-2.2939l7.8477-7.1494c1.1895-1.082,2.9844-1.083,4.1758-.0029l7.876,7.1514c.668.6084,1.0518,1.4463,1.0518,2.2988v9.125Z">
+                                                    d="M24.4791,3.0869c-2.8975-.9639-6.0684-.3633-8.4795,1.5586-2.4102-1.9219-5.5801-2.5186-8.4795-1.5586C3.5552,4.4062.8765,8.374,1.0044,12.749c0,0,.0313.7197.0488.8867.9053,8.7696,11.8135,15.2823,14.9463,15.2823s14.041-6.5127,14.9453-15.2793c.0186-.1699.0498-.8897.0508-.9023.127-4.3623-2.5518-8.3301-6.5166-9.6494ZM28.9556,13.4307c-.7656,7.4287-10.6895,13.4873-12.9561,13.4873S3.8091,20.8594,3.0425,13.4287c-.0146-.1484-.0391-.751-.0391-.751-.1025-3.4873,2.0147-6.6504,5.1475-7.6924,2.5166-.8379,5.1875-.1973,7.1524,1.708.3887.377,1.0039.377,1.3926,0,1.9658-1.9043,4.6367-2.544,7.1524-1.708,3.1328,1.042,5.25,4.2051,5.1484,7.6797,0,0-.0254.6133-.041.7656Z">
                                                 </path>
                                             </svg>
                                         </i>
@@ -256,7 +258,7 @@
             </div>
             <!-- // 전체 메뉴 리스트 -->
             <!-- 장바구니 리스트 -->
-            <div class="nav-cart-area" aria-expanded="false">
+            <div class="nav-cart-area">
                 <div class="cart-list-wrap">
                     <div class="cart-bg" aria-hidden="true"></div>
                     <div class="cart-list-area">
@@ -277,7 +279,7 @@
                                 <div class="pd-info">
                                     <img src="./assets/images/cart_thumb.webp" alt="product chilli fire" >
                                     <div class="pd-title">
-                                        <span aria-label="상품명">chilli fire</span>
+                                        <span><span class="blind">상품명</span>chilli fire</span>
                                         <div class="quantity-btn">
                                             <button class="btn-subtract" aria-label="아이템 빼기"><svg width="32" height="33" viewBox="0 0 32 33"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -288,7 +290,7 @@
                                                         d="M22 15.5H10C9.4473 15.5 9 15.9473 9 16.5C9 17.0527 9.4473 17.5 10 17.5H22C22.5527 17.5 23 17.0527 23 16.5C23 15.9473 22.5527 15.5 22 15.5Z"
                                                         fill="#31261D"></path>
                                                 </svg></button>
-                                            <span class="quantity-num" aria-label="수량">1</span>
+                                            <span class="quantity-num"><span class="blind">수량량</span> 1</span>
                                             <button class="btn-add" aria-label="아이템 추가">
                                                 <svg width="32" height="33" viewBox="0 0 32 33" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -309,10 +311,10 @@
                             </li>
                         </ul>
                         <div class="empty-large" aria-hidden="true"></div>
-                        <div class="cart-total">
+                        <dl class="cart-total">
                             <dt>sub total</dt>
                             <dd><span class="blind">총액</span>£12.00</dd>
-                        </div>
+                        </dl>
                         <div class="cart-checkout">
                             <button class="btn btn-checkout" aria-label="결제하기" role="link">
                                 <span class="btn-inner">
@@ -321,7 +323,7 @@
                                         <span class="text second">checkout</span>
                                     </span>
                                 </span>
-                                <div class="hover-effect-bg" aria-hidden="true"></div>
+                                <span class="hover-effect-bg" aria-hidden="true"></span>
                             </button>
                         </div>
                     </div>
@@ -333,6 +335,7 @@
     <main id="wrap">
         <!-- Intro Video-->
         <section class="sc-intro">
+            <h2 class="blind">Koffiracha Hot Sauce</h2>
             <div class="intro-inner">
                 <video class="intro-video pc" muted playsinline poster="./assets/images/intro-video-poster.jpg">
                     <source src="./assets/images/intro-video.webm" type="video/webm">
@@ -346,6 +349,7 @@
 
         <!-- Scroll text -->
         <section class="sc-scroll-text">
+            <h2 class="blind">Slogan</h2>
             <div class="scroll-component">
                 <ul class="scroll-text-list">
                     <li class="scroll-text-item"><span>Lightly caffeinated</span></li>
@@ -368,6 +372,7 @@
 
         <!-- Visual -->
         <section class="sc-visual" aria-hidden="true">
+            <span class="blind">Koffiracha Hot Sauce</span>
             <div class="visual-bg">
                 <img src="./assets/images/visual-img01.webp" alt class="visual-pc">
                 <img src="./assets/images/visual-img-m.webp" alt class="visual-m">
@@ -613,7 +618,7 @@
                                     <span class="desc">Koffiracha</span>
                                 </div>
                                 <div class="right">
-                                    <span class="price" aria-label="단가">£9.00</span>
+                                    <span class="price"><span class="blind">단가</span>£9.00</span>
                                     <span class="desc">VAT Included</span>
                                 </div>
                             </div>
@@ -656,11 +661,11 @@
 
         <!-- Recommend slide -->
         <section class="sc-recommend" id="sc-recommend">
+            <h2>When coffee
+                <br>super-liked
+                <br>chilli
+            </h2>
             <div class="bg-area">
-                <h2>When coffee
-                    <br>super-liked
-                    <br>chilli
-                </h2>
                 <img src="./assets/images/preview-img02.webp" alt aria-hidden="true">
             </div>
             <div class="sc__inner">
@@ -737,7 +742,7 @@
                         </div>
                         <!-- // slide btn -->
                         <!-- slide close btn -->
-                        <button class="btn-slide close" role="button" aria-label="슬라이드 닫기">
+                        <button class="btn-slide close" aria-label="슬라이드 닫기">
                             <i class="ic-arrow" aria-hidden="true">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -870,60 +875,61 @@
                         <div class="empty-medium" aria-hidden="true"></div>
                     </div>
                     <div class="rolling-box">
-                        <ul class="rolling-list" aria-label="제품 후기">
+                        <span class="blind">제품후기</span>
+                        <ul class="rolling-list">
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img01.webp" alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@gikastheo</span>
+                                    <span>@gikastheo</span>
                                     <img src="./assets/images/ic-instagram.png" alt class="ic-instagram">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img02.webp" alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@gikastheo</span>
+                                    <span>@gikastheo</span>
                                     <img src="./assets/images/ic-instagram.png" alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img03.webp" alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@catalyst_roasters</span>
+                                    <span >@catalyst_roasters</span>
                                     <img src="./assets/images/ic-instagram.png" alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img04.webp" alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@gikastheo</span>
+                                    <span>@gikastheo</span>
                                     <img src="./assets/images/ic-instagram.png" alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img05.webp" alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@gikastheo</span>
+                                    <span>@gikastheo</span>
                                     <img src="./assets/images/ic-instagram.png" alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img06.webp" alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@gikastheo</span>
+                                    <span>@gikastheo</span>
                                     <img src="./assets/images/ic-instagram.png" alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img07.webp" alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@catalyst_roasters</span>
+                                    <span>@catalyst_roasters</span>
                                     <img src="./assets/images/ic-instagram.png" alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img08.webp" alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@catalyst_roasters</span>
+                                    <span>@catalyst_roasters</span>
                                     <img src="./assets/images/ic-instagram.png" alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
@@ -932,56 +938,56 @@
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img01.webp" alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@gikastheo</span>
+                                    <span>@gikastheo</span>
                                     <img src="./assets/images/ic-instagram.png" alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img02.webp" alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@gikastheo</span>
+                                    <span>@gikastheo</span>
                                     <img src="./assets/images/ic-instagram.png" alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img03.webp" alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@catalyst_roasters</span>
+                                    <span>@catalyst_roasters</span>
                                     <img src="./assets/images/ic-instagram.png" alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img04.webp" alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@gikastheo</span>
+                                    <span>@gikastheo</span>
                                     <img src="./assets/images/ic-instagram.png" alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img05.webp"  alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@gikastheo</span>
+                                    <span>@gikastheo</span>
                                     <img src="./assets/images/ic-instagram.png"  alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img06.webp"  alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@gikastheo</span>
+                                    <span>@gikastheo</span>
                                     <img src="./assets/images/ic-instagram.png"  alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img07.webp"  alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@catalyst_roasters</span>
+                                    <span>@catalyst_roasters</span>
                                     <img src="./assets/images/ic-instagram.png"  alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
                             <li class="rolling-item">
                                 <img src="./assets/images/saucy-era-img08.webp"  alt="review picture">
                                 <div class="insta-mark">
-                                    <span aria-label="instagram">@catalyst_roasters</span>
+                                    <span>@catalyst_roasters</span>
                                     <img src="./assets/images/ic-instagram.png"  alt class="ic-instagram" aria-hidden="true">
                                 </div>
                             </li>
@@ -1032,7 +1038,7 @@
     <footer id="footer">
         <div class="footer-inner">
             <div class="outro">
-                <div class="footer-logo" aria-label="koffiracha">
+                <div class="footer-logo">
                     <svg width="1295" height="148" viewBox="0 0 1295 148" fill="none"
                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path
