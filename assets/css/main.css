@@ -287,6 +287,9 @@ main{
   background-color: var(--colour--yellow);
   overflow: hidden;
 }
+.sc-recommend h2{
+  display: none;
+}
 .sc-recommend .sc__inner{
   width: 100%;
   padding: 0 2.5rem;
